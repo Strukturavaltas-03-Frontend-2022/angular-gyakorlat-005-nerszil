@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-12 mt-3 pt-1 pb-1 d-flex justify-content-around">
+    <span class="text-bold">id</span>
+    <span class="text-bold">name</span>
+    <span class="text-bold">email</span>
+    <span class="text-bold">address</span>
+    <span class="text-bold">active</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 mt-1 data-list-row">
+    <app-data-row
+      **ngFor="let row of dataList"
+      [dataRow]="row"
+      (selectClick)="onSelectClick($event)"
+      (updateClick)="onUpdateClick($event)"
+      (deleteClick)="onDeleteClick($event)"
+    ></app-data-row>
+  </div>
+</div>
+
+<!--
+- Nézet: az alábbi kódban a pontok helyére először megjeleníti a hiányzó
+fejléceket. A második pontozott helyre megjeleníti az app-data-row-t, és
+annyiszor ismétli meg, ahány eleme van a kapott adatlistának:
+`*ngFor="let row of dataList"`. Átadja az app-data-row elemeknek az aktuális
+adatsort és feliratkozik az eseményeikre, azaz értelemszerűen hozzájuk rendeli
+a megfelelő nevű metódusokat.
+```html
+<div class="row">
+  <div class="col-12 mt-3 pt-1 pb-1 d-flex justify-content-around">
+    <span class="text-bold">id</span>
+    ...
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 mt-1 data-list-row">
+    ...
+  </div>
+</div>
+```
+-->
